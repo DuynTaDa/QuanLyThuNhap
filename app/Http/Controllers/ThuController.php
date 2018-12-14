@@ -22,11 +22,4 @@ class ThuController extends Controller
     	Thu::insert($objThu);
     	return redirect()->route('trangChu');
     }
-
-    public function show_list()
-    {
-    	$arrThu = Thu::getAll();
-        $arrChi = Chi::getAll();
-    	return view('list', ['danhSachThu' => $arrThu, 'danhSachChi' => $arrChi]);
-    }
 }

@@ -11,8 +11,10 @@ class ThongKeController extends Controller
 {
     public function show_list()
     {
-    	$arr = ThongKe::getAll();
-    	return view('list', ['danhSachThongKe' => $arr]);
+    	$arrThu = Thu::getAll();
+    	$arrChi = Chi::getAll();
+    	$arrTk = ThongKe::getAll();
+    	return view('list', ['danhSachThongKe' => $arrTk, 'danhSachThu' => $arrThu, 'danhSachChi' => $arrChi]);
     }
 
     public function insert_record()

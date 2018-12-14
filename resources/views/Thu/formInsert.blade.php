@@ -1,43 +1,43 @@
 @extends('master')
 @section('title', 'Thêm phiếu thu')
 @section('content')
-<div class="form_insert">
-	<div class="form_title">
-		<h3>Thêm phiếu thu</h3>
-	</div>
-	<form action="{{route('phieuThuXuLy')}}" class="form-horizontal" method="post">
-        <input type="hidden" name="_token" value="{{csrf_token()}}">
-        <!-- ngày thu -->
-        <div class="form-group">
-            <label class="control-label col-sm-12">Ngày thu:</label>
-            <div class="col-sm-12">
-                <input type="date" class="form-control" name="txtNgayThu">
-            </div> 
-        </div> 
-        <!-- nguồn thu -->
-        <div class="form-group">
-        	<label class="control-label col-sm-12">Nguồn thu:</label>
-            <div class="col-sm-12">
-            	<input type="text" class="form-control" name="txtNguonThu">
-            </div> 
-        </div>    
-        <!-- số tiền -->
-        <div class="form-group">
-        	<label class="control-label col-sm-12">Số tiền:</label>
-            <div class="col-sm-12">
-            	<input type="text" class="form-control" name="txtSoTien">
-            </div> 
-        </div>    
-        <!-- button -->
-        <div class="form-group">
-        	<div class="row">
-        		<div class="col-md-4"></div>
-        		<div class="col-md-6">
-        			<input type="reset" class="btn btn-outline-warning" value="Nhập lại">
-        			<input type="submit" class="btn btn-outline-primary" value="Thêm phiếu">        			
-        		</div>
-        	</div>
-        </div>  
-    </form>
+<div class="col-lg-12">
+    <section class="panel">
+        <header class="panel-heading">
+            Thêm phiếu thu
+        </header>
+        <div class="panel-body">
+            <div class="position-center">
+                <form class="form-horizontal" role="form" action="{{route('phieuThuXuLy')}}" method="post">
+                    <input type="hidden" name="_token" value="{{csrf_token()}}">
+                    <div class="form-group">
+                        <label for="txtNgayThu" class="col-lg-2 col-sm-2 control-label">Ngày thu</label>
+                        <div class="col-lg-10">
+                            <input type="date" class="form-control" name="txtNgayThu">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtNguonThu" class="col-lg-2 col-sm-2 control-label">Nguồn thu</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" name="txtNguonThu" placeholder="Nguồn thu">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtSoTien" class="col-lg-2 col-sm-2 control-label">Số tiền</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" name="txtSoTien" placeholder="Số tiền">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-6">
+                            <button type="reset" class="btn btn-warning">Nhập lại</button>
+                            <button type="submit" class="btn btn-primary">Thêm phiếu</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
 </div>
 @endsection
