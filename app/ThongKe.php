@@ -18,12 +18,17 @@ class ThongKe extends Model
     static function insert($obj)
     {
     	DB::table('tblThongKe')->insert([
-    		'thang' => $obj->thangNam,
+    		'thangNam' => $obj->thangNam,
     		'tongThu' => $obj->tongThu,
     		'tongChi' => $obj->tongChi,
     		'soDu' => $obj->soDu,
     		'maDanhGia' => $obj->maDanhGia
     	]);
+    }
+    static function getByMonth($month)
+    {
+        $arr = DB::select('select * from tblthongke where thangNam = ?', [$month]);
+        return $arr; 
     }
 }
 

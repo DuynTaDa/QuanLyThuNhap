@@ -22,14 +22,9 @@ class Thu extends Model
     	]);
     }
 
-    static function tinh_tong_thu()
+    static function tinh_tong_thu_theo_thang($thang)
     {
-        $arr = DB::table('tblthu')
-            ->select(DB::raw('sum(soTien) as tongThu'))
-            ->where('month(CURRENT_DATE())', 'month(ngayThu)')
-            ->get();
+        $arr = DB::select('select sum(soTien) as tongThu from tblthu where month(ngayThu) = ?', [$thang]);
         return $arr;
     }
 }
-
-// INSERT INTO tblthongke (thang, tongThu, tongChi, maDanhGia) VALUES (CURRENT_DATE(), (SELECT SUM(soTien) AS tongThu FROM tblthu), (SELECT SUM(soTien) AS tongChi FROM tblchi), 2)

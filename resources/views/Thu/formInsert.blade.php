@@ -3,9 +3,16 @@
 @section('content')
 <div class="col-lg-12">
     <section class="panel">
+        @if(session('warning'))
+        <div class="alert alert-danger alert-dismissible position-center">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{session('warning')}}
+        </div>
+         @endif
         <header class="panel-heading">
             Thêm phiếu thu
         </header>
+
         <div class="panel-body">
             <div class="position-center">
                 <form class="form-horizontal" role="form" action="{{route('phieuThuXuLy')}}" method="post">

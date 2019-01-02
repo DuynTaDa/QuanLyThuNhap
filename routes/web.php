@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('master');
 });
-Route::get('trangChu', 'ThongKeController@show_list')->name('trangChu');
+Route::get('trangChu', 'ThongKeController@insert_record')->name('trangChu');
 Route::get('phieuThu', 'ThuController@form_insert_thu')->name('phieuThu');
 Route::post('phieuThu', 'ThuController@insert_record')->name('phieuThuXuLy');
 Route::get('phieuChi', 'ChiController@form_insert_chi')->name('phieuChi');

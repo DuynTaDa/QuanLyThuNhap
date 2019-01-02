@@ -115,6 +115,7 @@
 							@foreach($danhSachThongKe as $objThongKe)
 							<tr>
 								<td>{{$objThongKe->maTk}}</td>
+								<td>{{$objThongKe->thangNam}}</td>
 								<td>{{$objThongKe->tongThu}}</td>
 								<td>{{$objThongKe->tongChi}}</td>
 								<td>{{$objThongKe->soDu}}</td>

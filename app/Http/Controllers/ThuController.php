@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Thu;
-use App\Chi;
 
 class ThuController extends Controller
 {

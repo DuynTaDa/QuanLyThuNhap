@@ -22,12 +22,9 @@ class Chi extends Model
     	]);
     }
 
-    static function tinh_tong_chi()
+    static function tinh_tong_chi_theo_thang($thang)
     {
-        $arr = DB::table('tblchi')
-            ->select(DB::raw('sum(soTien) as tongChi'))
-            ->where('month(CURRENT_DATE())', 'month(ngayChi)')
-            ->get();
+        $arr = DB::select('select sum(soTien) as tongChi from tblchi where month(ngayChi) = ?', [$thang]);
         return $arr;
     }
 }
