@@ -44,6 +44,13 @@ class FirstMigration extends Migration
             $table->integer('soDu');
             $table->integer('maDanhGia')->unsigned();
             $table->foreign('maDanhGia')->references('maDanhGia')->on('tblDanhGia');
+        }); 
+
+        Schema::create('tblTaiKhoan', function(Blueprint $table)
+        {
+            $table->increments('maTKhoan');
+            $table->string('user',50)->unique();
+            $table->string('pass',20)->unique();
         });
     }
 

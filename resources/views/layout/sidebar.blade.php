@@ -20,9 +20,9 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="login.html">
+                    <a href="{{route('dangXuat')}}">
                         <i class="fa fa-user"></i>
-                        <span>Login Page</span>
+                        <span>Logout</span>
                     </a>
                 </li>
             </ul>            </div>
