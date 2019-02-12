@@ -9,13 +9,15 @@ class TaiKhoan extends Model
 {
     static function login($obj)
     {
-    	$arr = DB::table('tblTaiKhoan')
-	    	->where([
-	    		['user','=','$obj->user'],
-	    		['pass','=','$obj->pass']
-	    	])
-	    	->get();
-    	return $arr;
+    	// $arr = DB::table('tblTaiKhoan')
+	    // 	->where([
+	    // 		['user','=','$obj->user'],
+	    // 		['pass','=','$obj->pass']
+	    // 	])
+	    // 	->get();
+    	// return $arr;
+        $arr = DB::select('select * from tblTaiKhoan where user = ? and pass = ?',[$obj->user, $obj->pass]);
+        return $arr;
     }
 
     static function register($obj)

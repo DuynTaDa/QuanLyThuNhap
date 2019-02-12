@@ -24,6 +24,8 @@ class ThongKe extends Model
     		'soDu' => $obj->soDu,
     		'maDanhGia' => $obj->maDanhGia
     	]);
+        // DB::insert('insert into tblThongKe(thangNam, tongThu, tongChi, soDu, maDanhGia) values(?,?,?,?,?)',
+        //             [$obj->thangNam, $obj->tongThu, $obj->tongChi, $obj->soDu, $obj->maDanhGia]);
     }
     static function getByMonth($month)
     {
